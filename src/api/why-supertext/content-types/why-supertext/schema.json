@@ -4,7 +4,8 @@
   "info": {
     "singularName": "why-supertext",
     "pluralName": "why-supertexts",
-    "displayName": "Why Supertext"
+    "displayName": "Why Supertext",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,16 @@
         }
       },
       "component": "base.seo"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.faq-container"
     }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faq_entries",
+  "info": {
+    "singularName": "faq-entry",
+    "pluralName": "faq-entries",
+    "displayName": "FAQ-entry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "content": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "faq_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq-category.faq-category",
+      "inversedBy": "faq_entries"
+    }
+  }
+}

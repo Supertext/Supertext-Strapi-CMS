@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BaseFaqContainer extends Struct.ComponentSchema {
+  collectionName: 'components_base_faq_containers';
+  info: {
+    displayName: 'FAQ Container';
+  };
+  attributes: {
+    faq_entries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-entry.faq-entry'
+    >;
+  };
+}
+
 export interface BaseSeo extends Struct.ComponentSchema {
   collectionName: 'components_base_seos';
   info: {
@@ -79,6 +92,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'base.faq-container': BaseFaqContainer;
       'base.seo': BaseSeo;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
