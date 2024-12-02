@@ -24,19 +24,19 @@
         }
       }
     },
-    "content": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "faq_categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::faq-category.faq-category",
       "inversedBy": "faq_entries"
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     }
   }
 }
