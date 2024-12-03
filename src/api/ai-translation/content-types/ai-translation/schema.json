@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "ai_translations",
+  "info": {
+    "singularName": "ai-translation",
+    "pluralName": "ai-translations",
+    "displayName": "AI Translation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.faq-container"
+    }
+  }
+}
