@@ -24,7 +24,8 @@
           "localized": true
         }
       },
-      "component": "base.seo"
+      "component": "base.seo",
+      "required": true
     },
     "content": {
       "pluginOptions": {
@@ -32,7 +33,60 @@
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "blog_posts"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "blog_posts"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "author_time": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "maxLength": 200,
+      "required": true
     },
     "slug": {
       "pluginOptions": {
@@ -40,9 +94,8 @@
           "localized": true
         }
       },
-      "type": "string",
-      "required": true,
-      "default": "das"
+      "type": "uid",
+      "required": true
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_featured_blog_posts",
+  "info": {
+    "displayName": "Featured Blog Post",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "blog_post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-post.blog-post"
+    }
+  }
+}

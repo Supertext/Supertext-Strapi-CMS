@@ -27,6 +27,40 @@ export interface BaseSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsFeaturedBlogPost extends Struct.ComponentSchema {
+  collectionName: 'components_elements_featured_blog_posts';
+  info: {
+    description: '';
+    displayName: 'Featured Blog Post';
+  };
+  attributes: {
+    blog_post: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::blog-post.blog-post'
+    >;
+  };
+}
+
+export interface SectionsFeaturedBlogPosts extends Struct.ComponentSchema {
+  collectionName: 'components_sections_featured_blog_posts';
+  info: {
+    description: '';
+    displayName: 'Featured Blog Posts';
+  };
+  attributes: {
+    posts: Schema.Attribute.Component<'elements.featured-blog-post', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 1;
+        },
+        number
+      >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -94,6 +128,8 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'base.faq-container': BaseFaqContainer;
       'base.seo': BaseSeo;
+      'elements.featured-blog-post': ElementsFeaturedBlogPost;
+      'sections.featured-blog-posts': SectionsFeaturedBlogPosts;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
