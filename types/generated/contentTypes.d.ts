@@ -832,6 +832,7 @@ export interface ApiLanguageExpertiseLanguageExpertise
   extends Struct.SingleTypeSchema {
   collectionName: 'language_expertises';
   info: {
+    description: '';
     displayName: 'Language Expertise';
     pluralName: 'language-expertises';
     singularName: 'language-expertise';
@@ -854,7 +855,7 @@ export interface ApiLanguageExpertiseLanguageExpertise
       'api::language-expertise.language-expertise'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'base.seo', true> &
+    seo: Schema.Attribute.Component<'base.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

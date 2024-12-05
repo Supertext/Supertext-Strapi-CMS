@@ -4,7 +4,8 @@
   "info": {
     "singularName": "language-expertise",
     "pluralName": "language-expertises",
-    "displayName": "Language Expertise"
+    "displayName": "Language Expertise",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,7 @@
   "attributes": {
     "seo": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
