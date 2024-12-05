@@ -22,10 +22,13 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "required": true,
+      "targetField": "name"
     },
     "description": {
       "type": "text",

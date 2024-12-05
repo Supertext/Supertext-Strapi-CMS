@@ -24,7 +24,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "title": {
       "pluginOptions": {
@@ -32,18 +33,19 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     }

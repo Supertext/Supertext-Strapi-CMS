@@ -66,17 +66,18 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
     "author_time": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "description": {
       "pluginOptions": {
