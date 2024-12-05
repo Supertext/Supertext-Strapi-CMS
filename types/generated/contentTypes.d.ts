@@ -828,6 +828,44 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLanguageExpertiseLanguageExpertise
+  extends Struct.SingleTypeSchema {
+  collectionName: 'language_expertises';
+  info: {
+    displayName: 'Language Expertise';
+    pluralName: 'language-expertises';
+    singularName: 'language-expertise';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::language-expertise.language-expertise'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWhySupertextWhySupertext extends Struct.SingleTypeSchema {
   collectionName: 'why_supertexts';
   info: {
@@ -1391,6 +1429,7 @@ declare module '@strapi/strapi' {
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq-entry.faq-entry': ApiFaqEntryFaqEntry;
       'api::global.global': ApiGlobalGlobal;
+      'api::language-expertise.language-expertise': ApiLanguageExpertiseLanguageExpertise;
       'api::why-supertext.why-supertext': ApiWhySupertextWhySupertext;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

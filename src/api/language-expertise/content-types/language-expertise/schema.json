@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "language_expertises",
+  "info": {
+    "singularName": "language-expertise",
+    "pluralName": "language-expertises",
+    "displayName": "Language Expertise"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo"
+    }
+  }
+}
