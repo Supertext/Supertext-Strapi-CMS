@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_categories",
+  "info": {
+    "singularName": "case-category",
+    "pluralName": "case-categories",
+    "displayName": "Case-category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    }
+  }
+}
