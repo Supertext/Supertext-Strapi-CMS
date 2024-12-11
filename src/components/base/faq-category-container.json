@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_base_faq_category_containers",
+  "info": {
+    "displayName": "FAQ Category Container"
+  },
+  "options": {},
+  "attributes": {
+    "faq_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-category.faq-category"
+    }
+  }
+}

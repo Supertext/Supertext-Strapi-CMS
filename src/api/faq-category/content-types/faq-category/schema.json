@@ -16,13 +16,14 @@
     }
   },
   "attributes": {
-    "Category": {
+    "name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "faq_entries": {
       "type": "relation",
