@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,9 +16,9 @@
     }
   },
   "attributes": {
-    "Home": {
+    "seo": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
