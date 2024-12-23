@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_supertexts",
+  "info": {
+    "singularName": "about-supertext",
+    "pluralName": "about-supertexts",
+    "displayName": "About Supertext"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo"
+    }
+  }
+}
