@@ -1112,6 +1112,43 @@ export interface ApiReferenceReference extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTechnologyTechnology extends Struct.SingleTypeSchema {
+  collectionName: 'technologies';
+  info: {
+    displayName: 'Technology';
+    pluralName: 'technologies';
+    singularName: 'technology';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::technology.technology'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWhySupertextWhySupertext extends Struct.SingleTypeSchema {
   collectionName: 'why_supertexts';
   info: {
@@ -1719,6 +1756,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::language-expertise.language-expertise': ApiLanguageExpertiseLanguageExpertise;
       'api::reference.reference': ApiReferenceReference;
+      'api::technology.technology': ApiTechnologyTechnology;
       'api::why-supertext.why-supertext': ApiWhySupertextWhySupertext;
       'api::work-at-supertext.work-at-supertext': ApiWorkAtSupertextWorkAtSupertext;
       'plugin::content-releases.release': PluginContentReleasesRelease;
