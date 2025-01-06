@@ -26,6 +26,14 @@ export interface BaseFaqContainer extends Struct.ComponentSchema {
   };
 }
 
+export interface BaseLogoBoard extends Struct.ComponentSchema {
+  collectionName: 'components_base_logo_boards';
+  info: {
+    displayName: 'Logo Board';
+  };
+  attributes: {};
+}
+
 export interface BaseSeo extends Struct.ComponentSchema {
   collectionName: 'components_base_seos';
   info: {
@@ -107,6 +115,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'base.faq-category-container': BaseFaqCategoryContainer;
       'base.faq-container': BaseFaqContainer;
+      'base.logo-board': BaseLogoBoard;
       'base.seo': BaseSeo;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

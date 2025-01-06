@@ -1023,6 +1023,12 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'>;
+    logos: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'base.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1078,6 +1084,7 @@ export interface ApiLanguageExpertiseLanguageExpertise
 export interface ApiReferenceReference extends Struct.SingleTypeSchema {
   collectionName: 'references';
   info: {
+    description: '';
     displayName: 'Reference';
     pluralName: 'references';
     singularName: 'reference';
@@ -1099,6 +1106,12 @@ export interface ApiReferenceReference extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::reference.reference'
     >;
+    logos: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{

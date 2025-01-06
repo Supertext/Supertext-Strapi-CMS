@@ -4,7 +4,8 @@
   "info": {
     "singularName": "reference",
     "pluralName": "references",
-    "displayName": "Reference"
+    "displayName": "Reference",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,19 @@
         }
       },
       "component": "shared.seo"
+    },
+    "logos": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
