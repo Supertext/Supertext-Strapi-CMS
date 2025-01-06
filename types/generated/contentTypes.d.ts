@@ -1026,7 +1026,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     logos: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
@@ -1109,7 +1109,7 @@ export interface ApiReferenceReference extends Struct.SingleTypeSchema {
     logos: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
