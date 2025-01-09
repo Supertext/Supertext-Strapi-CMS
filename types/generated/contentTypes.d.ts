@@ -1193,6 +1193,50 @@ export interface ApiTechnologyTechnology extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTermsAndConditionTermsAndCondition
+  extends Struct.SingleTypeSchema {
+  collectionName: 'terms_and_conditions';
+  info: {
+    displayName: 'Terms & Condition';
+    pluralName: 'terms-and-conditions';
+    singularName: 'terms-and-condition';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-and-condition.terms-and-condition'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWhySupertextWhySupertext extends Struct.SingleTypeSchema {
   collectionName: 'why_supertexts';
   info: {
@@ -1801,6 +1845,7 @@ declare module '@strapi/strapi' {
       'api::language-expertise.language-expertise': ApiLanguageExpertiseLanguageExpertise;
       'api::reference.reference': ApiReferenceReference;
       'api::technology.technology': ApiTechnologyTechnology;
+      'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'api::why-supertext.why-supertext': ApiWhySupertextWhySupertext;
       'api::work-at-supertext.work-at-supertext': ApiWorkAtSupertextWorkAtSupertext;
       'plugin::content-releases.release': PluginContentReleasesRelease;
