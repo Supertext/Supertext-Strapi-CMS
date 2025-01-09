@@ -722,6 +722,12 @@ export interface ApiCaseEntryCaseEntry extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    articleTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     case_category: Schema.Attribute.Relation<
       'oneToOne',
       'api::case-category.case-category'
