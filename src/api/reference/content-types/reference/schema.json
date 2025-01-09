@@ -16,16 +16,6 @@
     }
   },
   "attributes": {
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.seo"
-    },
     "logos": {
       "type": "media",
       "multiple": true,
@@ -39,6 +29,16 @@
           "localized": false
         }
       }
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo"
     }
   }
 }

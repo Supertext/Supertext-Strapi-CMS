@@ -1139,7 +1139,7 @@ export interface ApiReferenceReference extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false> &
+    seo: Schema.Attribute.Component<'base.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
