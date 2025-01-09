@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cases_text_contents",
+  "info": {
+    "displayName": "TextContent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

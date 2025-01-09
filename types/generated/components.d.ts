@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BaseButton extends Struct.ComponentSchema {
+  collectionName: 'components_base_buttons';
+  info: {
+    description: '';
+    displayName: 'button';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BaseFaqCategoryContainer extends Struct.ComponentSchema {
   collectionName: 'components_base_faq_category_containers';
   info: {
@@ -26,6 +38,24 @@ export interface BaseFaqContainer extends Struct.ComponentSchema {
   };
 }
 
+export interface BaseKeyFigures extends Struct.ComponentSchema {
+  collectionName: 'components_base_key_figures';
+  info: {
+    displayName: 'keyFigures';
+  };
+  attributes: {};
+}
+
+export interface BaseKeyfigures extends Struct.ComponentSchema {
+  collectionName: 'components_base_keyfigures';
+  info: {
+    displayName: 'Keyfigures';
+  };
+  attributes: {
+    figure: Schema.Attribute.String;
+  };
+}
+
 export interface BaseLogoBoard extends Struct.ComponentSchema {
   collectionName: 'components_base_logo_boards';
   info: {
@@ -45,6 +75,68 @@ export interface BaseSeo extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface CasesFooterNote extends Struct.ComponentSchema {
+  collectionName: 'components_cases_footer_notes';
+  info: {
+    displayName: 'footerNote';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'base.button', false>;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface CasesImage extends Struct.ComponentSchema {
+  collectionName: 'components_cases_images';
+  info: {
+    displayName: 'image';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface CasesQuote extends Struct.ComponentSchema {
+  collectionName: 'components_cases_quotes';
+  info: {
+    description: '';
+    displayName: 'quote';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    quote: Schema.Attribute.Text;
+    role: Schema.Attribute.String;
+  };
+}
+
+export interface CasesSliderJumbotron extends Struct.ComponentSchema {
+  collectionName: 'components_cases_slider_jumbotrons';
+  info: {
+    description: '';
+    displayName: 'sliderJumbotron';
+  };
+  attributes: {
+    sliderImages: Schema.Attribute.Media<'images' | 'files', true>;
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CasesTextContent extends Struct.ComponentSchema {
+  collectionName: 'components_cases_text_contents';
+  info: {
+    description: '';
+    displayName: 'TextContent';
+  };
+  attributes: {
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -113,10 +205,18 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'base.button': BaseButton;
       'base.faq-category-container': BaseFaqCategoryContainer;
       'base.faq-container': BaseFaqContainer;
+      'base.key-figures': BaseKeyFigures;
+      'base.keyfigures': BaseKeyfigures;
       'base.logo-board': BaseLogoBoard;
       'base.seo': BaseSeo;
+      'cases.footer-note': CasesFooterNote;
+      'cases.image': CasesImage;
+      'cases.quote': CasesQuote;
+      'cases.slider-jumbotron': CasesSliderJumbotron;
+      'cases.text-content': CasesTextContent;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

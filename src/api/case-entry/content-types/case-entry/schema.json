@@ -80,6 +80,44 @@
       },
       "type": "string",
       "required": true
+    },
+    "keyfigures": {
+      "displayName": "Keyfigures",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.keyfigures"
+    },
+    "Sections": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "cases.text-content",
+        "cases.slider-jumbotron",
+        "cases.quote",
+        "cases.image",
+        "cases.footer-note"
+      ]
+    },
+    "downloadCaseStudy": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

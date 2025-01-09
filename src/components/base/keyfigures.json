@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_base_keyfigures",
+  "info": {
+    "displayName": "Keyfigures"
+  },
+  "options": {},
+  "attributes": {
+    "figure": {
+      "type": "string"
+    }
+  }
+}

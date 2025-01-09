@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_cases_slider_jumbotrons",
+  "info": {
+    "displayName": "sliderJumbotron",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "sliderImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

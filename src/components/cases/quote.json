@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cases_quotes",
+  "info": {
+    "displayName": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    }
+  }
+}

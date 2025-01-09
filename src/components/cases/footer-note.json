@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_cases_footer_notes",
+  "info": {
+    "displayName": "footerNote"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.button"
+    }
+  }
+}

@@ -743,6 +743,18 @@ export interface ApiCaseEntryCaseEntry extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    downloadCaseStudy: Schema.Attribute.Media<'files', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    keyfigures: Schema.Attribute.Component<'base.keyfigures', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -756,6 +768,20 @@ export interface ApiCaseEntryCaseEntry extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    Sections: Schema.Attribute.DynamicZone<
+      [
+        'cases.text-content',
+        'cases.slider-jumbotron',
+        'cases.quote',
+        'cases.image',
+        'cases.footer-note',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     seo: Schema.Attribute.Component<'base.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
