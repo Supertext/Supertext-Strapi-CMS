@@ -780,7 +780,6 @@ export interface ApiCaseEntryCaseEntry extends Struct.CollectionTypeSchema {
         'cases.slider-jumbotron',
         'cases.quote',
         'cases.image',
-        'cases.footer-note',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

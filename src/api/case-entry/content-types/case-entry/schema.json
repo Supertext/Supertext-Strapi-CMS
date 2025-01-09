@@ -103,8 +103,7 @@
         "cases.text-content",
         "cases.slider-jumbotron",
         "cases.quote",
-        "cases.image",
-        "cases.footer-note"
+        "cases.image"
       ]
     },
     "downloadCaseStudy": {
