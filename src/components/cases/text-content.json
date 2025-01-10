@@ -14,6 +14,14 @@
     },
     "text": {
       "type": "richtext"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "default": "dark"
     }
   }
 }

@@ -146,6 +146,8 @@ export interface CasesTextContent extends Struct.ComponentSchema {
     displayName: 'TextContent';
   };
   attributes: {
+    background: Schema.Attribute.Enumeration<['light', 'dark']> &
+      Schema.Attribute.DefaultTo<'dark'>;
     subtitle: Schema.Attribute.String;
     text: Schema.Attribute.RichText;
     title: Schema.Attribute.String;
