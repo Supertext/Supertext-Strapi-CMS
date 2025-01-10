@@ -103,7 +103,8 @@
         "cases.text-content",
         "cases.slider-jumbotron",
         "cases.quote",
-        "cases.image"
+        "cases.image",
+        "cases.footer-note"
       ]
     },
     "downloadCaseStudy": {
@@ -126,6 +127,16 @@
         }
       },
       "type": "string"
+    },
+    "showShareButtons": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "cases.show-share-buttons"
     }
   }
 }

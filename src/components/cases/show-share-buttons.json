@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_cases_show_share_buttons",
+  "info": {
+    "displayName": "showShareButtons",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "showShareButtons": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    }
+  }
+}

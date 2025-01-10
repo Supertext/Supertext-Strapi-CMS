@@ -113,6 +113,18 @@ export interface CasesQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface CasesShowShareButtons extends Struct.ComponentSchema {
+  collectionName: 'components_cases_show_share_buttons';
+  info: {
+    description: '';
+    displayName: 'showShareButtons';
+  };
+  attributes: {
+    showShareButtons: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface CasesSliderJumbotron extends Struct.ComponentSchema {
   collectionName: 'components_cases_slider_jumbotrons';
   info: {
@@ -215,6 +227,7 @@ declare module '@strapi/strapi' {
       'cases.footer-note': CasesFooterNote;
       'cases.image': CasesImage;
       'cases.quote': CasesQuote;
+      'cases.show-share-buttons': CasesShowShareButtons;
       'cases.slider-jumbotron': CasesSliderJumbotron;
       'cases.text-content': CasesTextContent;
       'shared.media': SharedMedia;

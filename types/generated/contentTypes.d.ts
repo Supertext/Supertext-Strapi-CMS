@@ -780,6 +780,7 @@ export interface ApiCaseEntryCaseEntry extends Struct.CollectionTypeSchema {
         'cases.slider-jumbotron',
         'cases.quote',
         'cases.image',
+        'cases.footer-note',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -788,6 +789,15 @@ export interface ApiCaseEntryCaseEntry extends Struct.CollectionTypeSchema {
         };
       }>;
     seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    showShareButtons: Schema.Attribute.Component<
+      'cases.show-share-buttons',
+      false
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
