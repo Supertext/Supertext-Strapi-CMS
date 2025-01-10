@@ -161,7 +161,7 @@ export interface ImpressumItem extends Struct.ComponentSchema {
     displayName: 'item';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    text: Schema.Attribute.RichText;
     title: Schema.Attribute.String;
   };
 }
@@ -169,6 +169,7 @@ export interface ImpressumItem extends Struct.ComponentSchema {
 export interface ImpressumSection extends Struct.ComponentSchema {
   collectionName: 'components_impressum_sections';
   info: {
+    description: '';
     displayName: 'section';
   };
   attributes: {

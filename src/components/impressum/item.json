@@ -9,8 +9,8 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "string"
+    "text": {
+      "type": "richtext"
     }
   }
 }

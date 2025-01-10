@@ -1,7 +1,8 @@
 {
   "collectionName": "components_impressum_sections",
   "info": {
-    "displayName": "section"
+    "displayName": "section",
+    "description": ""
   },
   "options": {},
   "attributes": {
