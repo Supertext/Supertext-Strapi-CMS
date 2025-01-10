@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_impressum_sections",
+  "info": {
+    "displayName": "section"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "impressum.item"
+    },
+    "title": {
+      "type": "string"
+    },
+    "address1": {
+      "type": "string"
+    },
+    "address2": {
+      "type": "string"
+    }
+  }
+}

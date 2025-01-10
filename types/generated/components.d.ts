@@ -154,6 +154,31 @@ export interface CasesTextContent extends Struct.ComponentSchema {
   };
 }
 
+export interface ImpressumItem extends Struct.ComponentSchema {
+  collectionName: 'components_impressum_items';
+  info: {
+    description: '';
+    displayName: 'item';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ImpressumSection extends Struct.ComponentSchema {
+  collectionName: 'components_impressum_sections';
+  info: {
+    displayName: 'section';
+  };
+  attributes: {
+    address1: Schema.Attribute.String;
+    address2: Schema.Attribute.String;
+    item: Schema.Attribute.Component<'impressum.item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -232,6 +257,8 @@ declare module '@strapi/strapi' {
       'cases.show-share-buttons': CasesShowShareButtons;
       'cases.slider-jumbotron': CasesSliderJumbotron;
       'cases.text-content': CasesTextContent;
+      'impressum.item': ImpressumItem;
+      'impressum.section': ImpressumSection;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
