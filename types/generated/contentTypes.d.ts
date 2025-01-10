@@ -1207,6 +1207,7 @@ export interface ApiTermsAndConditionTermsAndCondition
   extends Struct.SingleTypeSchema {
   collectionName: 'terms_and_conditions';
   info: {
+    description: '';
     displayName: 'Terms & Condition';
     pluralName: 'terms-and-conditions';
     singularName: 'terms-and-condition';
@@ -1223,6 +1224,12 @@ export interface ApiTermsAndConditionTermsAndCondition
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1236,6 +1243,12 @@ export interface ApiTermsAndConditionTermsAndCondition
         };
       }>;
     text: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
