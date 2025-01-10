@@ -1230,6 +1230,12 @@ export interface ApiTermsAndConditionTermsAndCondition
           localized: true;
         };
       }>;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
