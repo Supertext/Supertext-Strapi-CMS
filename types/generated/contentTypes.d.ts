@@ -1289,6 +1289,43 @@ export interface ApiReferenceReference extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSubscriptionSubscription extends Struct.SingleTypeSchema {
+  collectionName: 'subscriptions';
+  info: {
+    displayName: 'Subscription';
+    pluralName: 'subscriptions';
+    singularName: 'subscription';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subscription.subscription'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTechnologyTechnology extends Struct.SingleTypeSchema {
   collectionName: 'technologies';
   info: {
@@ -1998,6 +2035,7 @@ declare module '@strapi/strapi' {
       'api::language-expertise.language-expertise': ApiLanguageExpertiseLanguageExpertise;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::reference.reference': ApiReferenceReference;
+      'api::subscription.subscription': ApiSubscriptionSubscription;
       'api::technology.technology': ApiTechnologyTechnology;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'api::why-supertext.why-supertext': ApiWhySupertextWhySupertext;
