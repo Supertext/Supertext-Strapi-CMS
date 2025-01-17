@@ -910,6 +910,51 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCopywritingFormCopywritingForm
+  extends Struct.SingleTypeSchema {
+  collectionName: 'copywriting_forms';
+  info: {
+    description: '';
+    displayName: 'Form Copywriting';
+    pluralName: 'copywriting-forms';
+    singularName: 'copywriting-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'orderform.content', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::copywriting-form.copywriting-form'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
   collectionName: 'faq_categories';
   info: {
@@ -1029,6 +1074,138 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormProofreadingFormProofreading
+  extends Struct.SingleTypeSchema {
+  collectionName: 'form_proofreadings';
+  info: {
+    displayName: 'Form Proofreading';
+    pluralName: 'form-proofreadings';
+    singularName: 'form-proofreading';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'orderform.content', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::form-proofreading.form-proofreading'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormTranscreationFormTranscreation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'form_transcreations';
+  info: {
+    displayName: 'Form Transcreation';
+    pluralName: 'form-transcreations';
+    singularName: 'form-transcreation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'orderform.content', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::form-transcreation.form-transcreation'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormTranslationFormTranslation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'form_translations';
+  info: {
+    displayName: 'Form Translation';
+    pluralName: 'form-translations';
+    singularName: 'form-translation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'orderform.content', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::form-translation.form-translation'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'base.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1170,6 +1347,50 @@ export interface ApiLanguageExpertiseLanguageExpertise
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::language-expertise.language-expertise'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlainLanguagePlainLanguage extends Struct.SingleTypeSchema {
+  collectionName: 'plain_languages';
+  info: {
+    description: '';
+    displayName: 'Form Plain-Language';
+    pluralName: 'plain-languages';
+    singularName: 'plain-language';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'orderform.content', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plain-language.plain-language'
     >;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'base.seo', false> &
@@ -2027,12 +2248,17 @@ declare module '@strapi/strapi' {
       'api::case-entry.case-entry': ApiCaseEntryCaseEntry;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::copywriting-form.copywriting-form': ApiCopywritingFormCopywritingForm;
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq-entry.faq-entry': ApiFaqEntryFaqEntry;
       'api::faq.faq': ApiFaqFaq;
+      'api::form-proofreading.form-proofreading': ApiFormProofreadingFormProofreading;
+      'api::form-transcreation.form-transcreation': ApiFormTranscreationFormTranscreation;
+      'api::form-translation.form-translation': ApiFormTranslationFormTranslation;
       'api::home.home': ApiHomeHome;
       'api::impressum.impressum': ApiImpressumImpressum;
       'api::language-expertise.language-expertise': ApiLanguageExpertiseLanguageExpertise;
+      'api::plain-language.plain-language': ApiPlainLanguagePlainLanguage;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::reference.reference': ApiReferenceReference;
       'api::subscription.subscription': ApiSubscriptionSubscription;

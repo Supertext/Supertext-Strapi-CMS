@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_orderform_contents",
+  "info": {
+    "displayName": "content"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrowtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "footerNote": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "string"
+    }
+  }
+}

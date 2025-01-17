@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "plain_languages",
+  "info": {
+    "singularName": "plain-language",
+    "pluralName": "plain-languages",
+    "displayName": "Form Plain-Language",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "orderform.content"
+    }
+  }
+}

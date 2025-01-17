@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "form_proofreadings",
+  "info": {
+    "singularName": "form-proofreading",
+    "pluralName": "form-proofreadings",
+    "displayName": "Form Proofreading"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "orderform.content"
+    }
+  }
+}

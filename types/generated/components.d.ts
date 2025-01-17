@@ -180,6 +180,20 @@ export interface ImpressumSection extends Struct.ComponentSchema {
   };
 }
 
+export interface OrderformContent extends Struct.ComponentSchema {
+  collectionName: 'components_orderform_contents';
+  info: {
+    displayName: 'content';
+  };
+  attributes: {
+    cta: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    eyebrowtitle: Schema.Attribute.String;
+    footerNote: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -260,6 +274,7 @@ declare module '@strapi/strapi' {
       'cases.text-content': CasesTextContent;
       'impressum.item': ImpressumItem;
       'impressum.section': ImpressumSection;
+      'orderform.content': OrderformContent;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
