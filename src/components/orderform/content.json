@@ -1,7 +1,8 @@
 {
   "collectionName": "components_orderform_contents",
   "info": {
-    "displayName": "content"
+    "displayName": "content",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,7 +16,7 @@
       "type": "text"
     },
     "footerNote": {
-      "type": "string"
+      "type": "text"
     },
     "cta": {
       "type": "string"
