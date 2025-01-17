@@ -943,7 +943,7 @@ export interface ApiCopywritingFormCopywritingForm
       'api::copywriting-form.copywriting-form'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'base.seo', true> &
+    seo: Schema.Attribute.Component<'base.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
