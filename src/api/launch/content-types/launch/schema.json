@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "launches",
+  "info": {
+    "singularName": "launch",
+    "pluralName": "launches",
+    "displayName": "Launch"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.faq-container"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo"
+    }
+  }
+}

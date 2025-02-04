@@ -1368,6 +1368,46 @@ export interface ApiLanguageExpertiseLanguageExpertise
   };
 }
 
+export interface ApiLaunchLaunch extends Struct.SingleTypeSchema {
+  collectionName: 'launches';
+  info: {
+    displayName: 'Launch';
+    pluralName: 'launches';
+    singularName: 'launch';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'base.faq-container', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::launch.launch'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlainLanguagePlainLanguage extends Struct.SingleTypeSchema {
   collectionName: 'plain_languages';
   info: {
@@ -2265,6 +2305,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::impressum.impressum': ApiImpressumImpressum;
       'api::language-expertise.language-expertise': ApiLanguageExpertiseLanguageExpertise;
+      'api::launch.launch': ApiLaunchLaunch;
       'api::plain-language.plain-language': ApiPlainLanguagePlainLanguage;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::reference.reference': ApiReferenceReference;
