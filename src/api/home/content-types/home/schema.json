@@ -39,6 +39,16 @@
           "localized": false
         }
       }
+    },
+    "blog": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.blog-post-container"
     }
   }
 }

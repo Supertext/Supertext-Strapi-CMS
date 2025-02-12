@@ -373,6 +373,7 @@ export interface ApiAboutSupertextAboutSupertext
   extends Struct.SingleTypeSchema {
   collectionName: 'about_supertexts';
   info: {
+    description: '';
     displayName: 'About Supertext';
     pluralName: 'about-supertexts';
     singularName: 'about-supertext';
@@ -386,6 +387,12 @@ export interface ApiAboutSupertextAboutSupertext
     };
   };
   attributes: {
+    blog: Schema.Attribute.Component<'base.blog-post-container', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1243,6 +1250,12 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    blog: Schema.Attribute.Component<'base.blog-post-container', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1597,6 +1610,7 @@ export interface ApiSubscriptionSubscription extends Struct.SingleTypeSchema {
 export interface ApiTechnologyTechnology extends Struct.SingleTypeSchema {
   collectionName: 'technologies';
   info: {
+    description: '';
     displayName: 'Technology';
     pluralName: 'technologies';
     singularName: 'technology';
@@ -1610,6 +1624,12 @@ export interface ApiTechnologyTechnology extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    blog: Schema.Attribute.Component<'base.blog-post-container', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

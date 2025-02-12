@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_base_blog_post_containers",
+  "info": {
+    "displayName": "Blog Post Container"
+  },
+  "options": {},
+  "attributes": {
+    "blog_entries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-post.blog-post"
+    }
+  }
+}

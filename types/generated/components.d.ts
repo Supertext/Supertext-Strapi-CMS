@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BaseBlogPostContainer extends Struct.ComponentSchema {
+  collectionName: 'components_base_blog_post_containers';
+  info: {
+    displayName: 'Blog Post Container';
+  };
+  attributes: {
+    blog_entries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-post.blog-post'
+    >;
+  };
+}
+
 export interface BaseButton extends Struct.ComponentSchema {
   collectionName: 'components_base_buttons';
   info: {
@@ -260,6 +273,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'base.blog-post-container': BaseBlogPostContainer;
       'base.button': BaseButton;
       'base.faq-category-container': BaseFaqCategoryContainer;
       'base.faq-container': BaseFaqContainer;

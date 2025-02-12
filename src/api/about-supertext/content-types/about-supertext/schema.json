@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-supertext",
     "pluralName": "about-supertexts",
-    "displayName": "About Supertext"
+    "displayName": "About Supertext",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,17 @@
         }
       },
       "component": "base.seo"
+    },
+    "blog": {
+      "displayName": "Blog Post Container",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.blog-post-container"
     }
   }
 }
