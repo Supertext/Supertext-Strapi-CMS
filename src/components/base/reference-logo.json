@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_base_reference_logos",
+  "info": {
+    "displayName": "Reference Logo"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "link_url": {
+      "type": "string"
+    }
+  }
+}

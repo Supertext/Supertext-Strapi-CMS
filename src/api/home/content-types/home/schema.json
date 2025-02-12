@@ -49,6 +49,17 @@
         }
       },
       "component": "base.blog-post-container"
+    },
+    "reference_logos": {
+      "displayName": "Reference Logo",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.reference-logo"
     }
   }
 }

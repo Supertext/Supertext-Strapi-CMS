@@ -77,6 +77,17 @@ export interface BaseLogoBoard extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface BaseReferenceLogo extends Struct.ComponentSchema {
+  collectionName: 'components_base_reference_logos';
+  info: {
+    displayName: 'Reference Logo';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link_url: Schema.Attribute.String;
+  };
+}
+
 export interface BaseSeo extends Struct.ComponentSchema {
   collectionName: 'components_base_seos';
   info: {
@@ -280,6 +291,7 @@ declare module '@strapi/strapi' {
       'base.key-figures': BaseKeyFigures;
       'base.keyfigures': BaseKeyfigures;
       'base.logo-board': BaseLogoBoard;
+      'base.reference-logo': BaseReferenceLogo;
       'base.seo': BaseSeo;
       'cases.footer-note': CasesFooterNote;
       'cases.image': CasesImage;
