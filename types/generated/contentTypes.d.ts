@@ -1720,6 +1720,35 @@ export interface ApiTermsAndConditionTermsAndCondition
   };
 }
 
+export interface ApiTextshuttleIsNowSupertextTextshuttleIsNowSupertext
+  extends Struct.SingleTypeSchema {
+  collectionName: 'textshuttle_is_now_supertexts';
+  info: {
+    displayName: 'Textshuttle Is Now Supertext';
+    pluralName: 'textshuttle-is-now-supertexts';
+    singularName: 'textshuttle-is-now-supertext';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::textshuttle-is-now-supertext.textshuttle-is-now-supertext'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWhySupertextWhySupertext extends Struct.SingleTypeSchema {
   collectionName: 'why_supertexts';
   info: {
@@ -2338,6 +2367,7 @@ declare module '@strapi/strapi' {
       'api::subscription.subscription': ApiSubscriptionSubscription;
       'api::technology.technology': ApiTechnologyTechnology;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
+      'api::textshuttle-is-now-supertext.textshuttle-is-now-supertext': ApiTextshuttleIsNowSupertextTextshuttleIsNowSupertext;
       'api::why-supertext.why-supertext': ApiWhySupertextWhySupertext;
       'api::work-at-supertext.work-at-supertext': ApiWorkAtSupertextWorkAtSupertext;
       'plugin::content-releases.release': PluginContentReleasesRelease;

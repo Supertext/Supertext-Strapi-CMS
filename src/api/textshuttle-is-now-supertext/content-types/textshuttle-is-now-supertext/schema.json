@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "textshuttle_is_now_supertexts",
+  "info": {
+    "singularName": "textshuttle-is-now-supertext",
+    "pluralName": "textshuttle-is-now-supertexts",
+    "displayName": "Textshuttle Is Now Supertext"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}
