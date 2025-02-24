@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_translate_sections_reference_texts",
+  "info": {
+    "displayName": "Reference Text"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "string"
+    }
+  }
+}

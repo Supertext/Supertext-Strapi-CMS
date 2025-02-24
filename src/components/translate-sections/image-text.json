@@ -1,7 +1,8 @@
 {
   "collectionName": "components_translate_sections_image_texts",
   "info": {
-    "displayName": "Image Text"
+    "displayName": "Checked-List Text",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,20 +12,16 @@
     "lead": {
       "type": "text"
     },
-    "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "buttons": {
       "type": "component",
       "repeatable": true,
       "component": "base.button"
+    },
+    "checked_list_items": {
+      "displayName": "Checked List Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "translate-sections.checked-list-item"
     }
   }
 }

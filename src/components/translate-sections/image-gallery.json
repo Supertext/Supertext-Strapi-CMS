@@ -1,22 +1,19 @@
 {
   "collectionName": "components_translate_sections_image_galleries",
   "info": {
-    "displayName": "Image Gallery"
+    "displayName": "References",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "images": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "references": {
+      "displayName": "Reference Text",
+      "type": "component",
+      "repeatable": true,
+      "component": "translate-sections.reference-text"
     }
   }
 }

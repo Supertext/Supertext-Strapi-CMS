@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_translate_sections_checked_list_items",
+  "info": {
+    "displayName": "Checked List Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

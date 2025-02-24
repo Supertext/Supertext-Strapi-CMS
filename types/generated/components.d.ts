@@ -281,6 +281,18 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TranslateSectionsCheckedListItem
+  extends Struct.ComponentSchema {
+  collectionName: 'components_translate_sections_checked_list_items';
+  info: {
+    displayName: 'Checked List Item';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface TranslateSectionsFeatureIcons extends Struct.ComponentSchema {
   collectionName: 'components_translate_sections_feature_icons';
   info: {
@@ -324,11 +336,12 @@ export interface TranslateSectionsHero extends Struct.ComponentSchema {
 export interface TranslateSectionsImageGallery extends Struct.ComponentSchema {
   collectionName: 'components_translate_sections_image_galleries';
   info: {
-    displayName: 'Image Gallery';
+    description: '';
+    displayName: 'References';
   };
   attributes: {
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
+    references: Schema.Attribute.Component<
+      'translate-sections.reference-text',
       true
     >;
     title: Schema.Attribute.String;
@@ -338,13 +351,27 @@ export interface TranslateSectionsImageGallery extends Struct.ComponentSchema {
 export interface TranslateSectionsImageText extends Struct.ComponentSchema {
   collectionName: 'components_translate_sections_image_texts';
   info: {
-    displayName: 'Image Text';
+    description: '';
+    displayName: 'Checked-List Text';
   };
   attributes: {
     buttons: Schema.Attribute.Component<'base.button', true>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    checked_list_items: Schema.Attribute.Component<
+      'translate-sections.checked-list-item',
+      true
+    >;
     lead: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface TranslateSectionsReferenceText extends Struct.ComponentSchema {
+  collectionName: 'components_translate_sections_reference_texts';
+  info: {
+    displayName: 'Reference Text';
+  };
+  attributes: {
+    quote: Schema.Attribute.String;
   };
 }
 
@@ -374,11 +401,13 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'translate-sections.checked-list-item': TranslateSectionsCheckedListItem;
       'translate-sections.feature-icons': TranslateSectionsFeatureIcons;
       'translate-sections.features': TranslateSectionsFeatures;
       'translate-sections.hero': TranslateSectionsHero;
       'translate-sections.image-gallery': TranslateSectionsImageGallery;
       'translate-sections.image-text': TranslateSectionsImageText;
+      'translate-sections.reference-text': TranslateSectionsReferenceText;
     }
   }
 }
