@@ -281,6 +281,73 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TranslateSectionsFeatureIcons extends Struct.ComponentSchema {
+  collectionName: 'components_translate_sections_feature_icons';
+  info: {
+    displayName: 'Feature Icons';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface TranslateSectionsFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_translate_sections_features';
+  info: {
+    displayName: 'Features';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<
+      'translate-sections.feature-icons',
+      true
+    >;
+    footerText: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    lead: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface TranslateSectionsHero extends Struct.ComponentSchema {
+  collectionName: 'components_translate_sections_heroes';
+  info: {
+    description: '';
+    displayName: 'Hero';
+  };
+  attributes: {
+    leading: Schema.Attribute.Blocks;
+    mainHeading: Schema.Attribute.String;
+  };
+}
+
+export interface TranslateSectionsImageGallery extends Struct.ComponentSchema {
+  collectionName: 'components_translate_sections_image_galleries';
+  info: {
+    displayName: 'Image Gallery';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface TranslateSectionsImageText extends Struct.ComponentSchema {
+  collectionName: 'components_translate_sections_image_texts';
+  info: {
+    displayName: 'Image Text';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'base.button', true>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    lead: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -307,6 +374,11 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'translate-sections.feature-icons': TranslateSectionsFeatureIcons;
+      'translate-sections.features': TranslateSectionsFeatures;
+      'translate-sections.hero': TranslateSectionsHero;
+      'translate-sections.image-gallery': TranslateSectionsImageGallery;
+      'translate-sections.image-text': TranslateSectionsImageText;
     }
   }
 }

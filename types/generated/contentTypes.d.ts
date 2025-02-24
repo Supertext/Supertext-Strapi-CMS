@@ -1749,6 +1749,65 @@ export interface ApiTextshuttleIsNowSupertextTextshuttleIsNowSupertext
   };
 }
 
+export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
+  collectionName: 'translates';
+  info: {
+    description: '';
+    displayName: 'Translate';
+    pluralName: 'translates';
+    singularName: 'translate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::translate.translate'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'translate-sections.hero',
+        'translate-sections.features',
+        'translate-sections.image-text',
+        'translate-sections.image-gallery',
+        'cases.footer-note',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWhySupertextWhySupertext extends Struct.SingleTypeSchema {
   collectionName: 'why_supertexts';
   info: {
@@ -2368,6 +2427,7 @@ declare module '@strapi/strapi' {
       'api::technology.technology': ApiTechnologyTechnology;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'api::textshuttle-is-now-supertext.textshuttle-is-now-supertext': ApiTextshuttleIsNowSupertextTextshuttleIsNowSupertext;
+      'api::translate.translate': ApiTranslateTranslate;
       'api::why-supertext.why-supertext': ApiWhySupertextWhySupertext;
       'api::work-at-supertext.work-at-supertext': ApiWorkAtSupertextWorkAtSupertext;
       'plugin::content-releases.release': PluginContentReleasesRelease;

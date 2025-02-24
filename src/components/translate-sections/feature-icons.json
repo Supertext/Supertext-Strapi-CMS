@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_translate_sections_feature_icons",
+  "info": {
+    "displayName": "Feature Icons"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

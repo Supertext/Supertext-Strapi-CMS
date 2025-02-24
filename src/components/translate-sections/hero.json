@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_translate_sections_heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mainHeading": {
+      "type": "string"
+    },
+    "leading": {
+      "type": "blocks"
+    }
+  }
+}
