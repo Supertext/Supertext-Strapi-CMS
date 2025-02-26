@@ -49,6 +49,14 @@
         "translate-sections.image-gallery",
         "cases.footer-note"
       ]
+    },
+    "languagePairLeading": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
