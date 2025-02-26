@@ -328,7 +328,7 @@ export interface TranslateSectionsHero extends Struct.ComponentSchema {
     displayName: 'Hero';
   };
   attributes: {
-    leading: Schema.Attribute.Blocks;
+    leading: Schema.Attribute.RichText;
     mainHeading: Schema.Attribute.String;
   };
 }

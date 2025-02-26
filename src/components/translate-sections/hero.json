@@ -10,7 +10,7 @@
       "type": "string"
     },
     "leading": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }
