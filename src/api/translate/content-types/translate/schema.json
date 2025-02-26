@@ -57,6 +57,24 @@
         }
       },
       "type": "string"
+    },
+    "sourceLanguageTag": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "targetLanguageTag": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }
