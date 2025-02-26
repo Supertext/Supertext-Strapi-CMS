@@ -22,6 +22,8 @@ export interface BaseButton extends Struct.ComponentSchema {
   attributes: {
     link: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['default', 'login']> &
+      Schema.Attribute.DefaultTo<'default'>;
   };
 }
 
