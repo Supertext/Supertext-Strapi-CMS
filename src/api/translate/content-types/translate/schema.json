@@ -88,6 +88,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::language-pair.language-pair"
+    },
+    "file_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-type.file-type"
     }
   }
 }

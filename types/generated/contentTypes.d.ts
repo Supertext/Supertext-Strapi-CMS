@@ -1101,6 +1101,51 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFileTypeFileType extends Struct.CollectionTypeSchema {
+  collectionName: 'file_types';
+  info: {
+    displayName: 'File-type';
+    pluralName: 'file-types';
+    singularName: 'file-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::file-type.file-type'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    uid: Schema.Attribute.UID &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFormProofreadingFormProofreading
   extends Struct.SingleTypeSchema {
   collectionName: 'form_proofreadings';
@@ -1876,6 +1921,10 @@ export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    file_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::file-type.file-type'
+    >;
     language_pair: Schema.Attribute.Relation<
       'oneToOne',
       'api::language-pair.language-pair'
@@ -2553,6 +2602,7 @@ declare module '@strapi/strapi' {
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq-entry.faq-entry': ApiFaqEntryFaqEntry;
       'api::faq.faq': ApiFaqFaq;
+      'api::file-type.file-type': ApiFileTypeFileType;
       'api::form-proofreading.form-proofreading': ApiFormProofreadingFormProofreading;
       'api::form-transcreation.form-transcreation': ApiFormTranscreationFormTranscreation;
       'api::form-translation.form-translation': ApiFormTranslationFormTranslation;
