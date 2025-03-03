@@ -1811,6 +1811,14 @@ export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    showAITranslator: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
     slug: Schema.Attribute.UID &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1832,6 +1840,20 @@ export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    templateCategory: Schema.Attribute.Enumeration<
+      [
+        'languagePairTranslation',
+        'fileTypeTranslation',
+        'industrySpecificTranslation',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'languagePairTranslation'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

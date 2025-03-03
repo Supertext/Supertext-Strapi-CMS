@@ -75,6 +75,31 @@
       },
       "type": "string",
       "required": true
+    },
+    "showAITranslator": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "templateCategory": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "languagePairTranslation",
+        "fileTypeTranslation",
+        "industrySpecificTranslation"
+      ],
+      "default": "languagePairTranslation",
+      "required": true
     }
   }
 }
