@@ -1408,6 +1408,13 @@ export interface ApiLanguagePairLanguagePair
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1421,6 +1428,10 @@ export interface ApiLanguagePairLanguagePair
     targetLanguage: Schema.Attribute.Relation<
       'oneToOne',
       'api::language.language'
+    >;
+    translatePage: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::translate.translate'
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
