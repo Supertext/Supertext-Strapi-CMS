@@ -309,6 +309,7 @@ export interface TranslateSectionsFeatureIcons extends Struct.ComponentSchema {
 export interface TranslateSectionsFeatures extends Struct.ComponentSchema {
   collectionName: 'components_translate_sections_features';
   info: {
+    description: '';
     displayName: 'Features';
   };
   attributes: {
@@ -317,9 +318,9 @@ export interface TranslateSectionsFeatures extends Struct.ComponentSchema {
       true
     >;
     footerText: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     lead: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'> & Schema.Attribute.Required;
   };
 }
 

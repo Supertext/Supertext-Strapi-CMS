@@ -1,7 +1,8 @@
 {
   "collectionName": "components_translate_sections_features",
   "info": {
-    "displayName": "Features"
+    "displayName": "Features",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,15 +21,13 @@
     "footerText": {
       "type": "string"
     },
-    "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
+    "video": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ]
     }
   }
 }
