@@ -1414,34 +1414,14 @@ export interface ApiLanguagePairLanguagePair
       'api::language-pair.language-pair'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    sourceLanguageTag: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    sourceLanguageText: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    targetLanguageTag: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    targetLanguageText: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    sourceLanguage: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::language.language'
+    >;
+    targetLanguage: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::language.language'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -16,42 +16,15 @@
     }
   },
   "attributes": {
-    "sourceLanguageTag": {
-      "type": "string",
-      "unique": false,
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+    "sourceLanguage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
     },
-    "sourceLanguageText": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "targetLanguageTag": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "targetLanguageText": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
+    "targetLanguage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
     }
   }
 }
