@@ -47,7 +47,8 @@
         "translate-sections.features",
         "translate-sections.image-text",
         "translate-sections.image-gallery",
-        "cases.footer-note"
+        "cases.footer-note",
+        "translate-sections.language-pairs-offering"
       ]
     },
     "languagePairLeading": {
@@ -57,24 +58,6 @@
         }
       },
       "type": "string"
-    },
-    "sourceLanguageTag": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "targetLanguageTag": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "string",
-      "required": true
     },
     "showAITranslator": {
       "pluginOptions": {
@@ -100,6 +83,11 @@
       ],
       "default": "languagePairTranslation",
       "required": true
+    },
+    "language_pair": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language-pair.language-pair"
     }
   }
 }

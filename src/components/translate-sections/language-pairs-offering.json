@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_translate_sections_language_pairs_offerings",
+  "info": {
+    "displayName": "Language Pairs Offering",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "popularLanguagePairsTitle": {
+      "type": "string"
+    },
+    "moreLanguagesTitle": {
+      "type": "string"
+    },
+    "popularLanguagePairs": {
+      "displayName": "Popular Language Pairs",
+      "type": "component",
+      "repeatable": false,
+      "component": "translate-sections.popular-language-pairs"
+    },
+    "moreLanguages": {
+      "displayName": "Languages Offering",
+      "type": "component",
+      "repeatable": false,
+      "component": "translate-sections.languages-offering"
+    }
+  }
+}

@@ -1387,6 +1387,112 @@ export interface ApiLanguageExpertiseLanguageExpertise
   };
 }
 
+export interface ApiLanguagePairLanguagePair
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'language_pairs';
+  info: {
+    description: '';
+    displayName: 'Language-pair';
+    pluralName: 'language-pairs';
+    singularName: 'language-pair';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::language-pair.language-pair'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sourceLanguageTag: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sourceLanguageText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    targetLanguageTag: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    targetLanguageText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLanguageLanguage extends Struct.CollectionTypeSchema {
+  collectionName: 'languages';
+  info: {
+    displayName: 'Language';
+    pluralName: 'languages';
+    singularName: 'language';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    languageTag: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::language.language'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLaunchLaunch extends Struct.SingleTypeSchema {
   collectionName: 'launches';
   info: {
@@ -1779,6 +1885,10 @@ export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    language_pair: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::language-pair.language-pair'
+    >;
     languagePairLeading: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1798,6 +1908,7 @@ export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
         'translate-sections.image-text',
         'translate-sections.image-gallery',
         'cases.footer-note',
+        'translate-sections.language-pairs-offering',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1824,20 +1935,6 @@ export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
-        };
-      }>;
-    sourceLanguageTag: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    targetLanguageTag: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
         };
       }>;
     templateCategory: Schema.Attribute.Enumeration<
@@ -2471,6 +2568,8 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::impressum.impressum': ApiImpressumImpressum;
       'api::language-expertise.language-expertise': ApiLanguageExpertiseLanguageExpertise;
+      'api::language-pair.language-pair': ApiLanguagePairLanguagePair;
+      'api::language.language': ApiLanguageLanguage;
       'api::launch.launch': ApiLaunchLaunch;
       'api::plain-language.plain-language': ApiPlainLanguagePlainLanguage;
       'api::privacy.privacy': ApiPrivacyPrivacy;

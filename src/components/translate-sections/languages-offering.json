@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_translate_sections_languages_offerings",
+  "info": {
+    "displayName": "Languages Offering"
+  },
+  "options": {},
+  "attributes": {
+    "languages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::language.language"
+    }
+  }
+}
