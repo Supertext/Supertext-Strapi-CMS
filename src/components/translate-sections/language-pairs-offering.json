@@ -15,17 +15,15 @@
     "moreLanguagesTitle": {
       "type": "string"
     },
-    "popularLanguagePairs": {
-      "displayName": "Popular Language Pairs",
-      "type": "component",
-      "repeatable": false,
-      "component": "translate-sections.popular-language-pairs"
+    "language_pairs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::language-pair.language-pair"
     },
-    "moreLanguages": {
-      "displayName": "Languages Offering",
-      "type": "component",
-      "repeatable": false,
-      "component": "translate-sections.languages-offering"
+    "languages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::language.language"
     }
   }
 }

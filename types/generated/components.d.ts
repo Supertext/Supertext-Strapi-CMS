@@ -376,43 +376,14 @@ export interface TranslateSectionsLanguagePairsOffering
     displayName: 'Language Pairs Offering';
   };
   attributes: {
-    moreLanguages: Schema.Attribute.Component<
-      'translate-sections.languages-offering',
-      false
-    >;
-    moreLanguagesTitle: Schema.Attribute.String;
-    popularLanguagePairs: Schema.Attribute.Component<
-      'translate-sections.popular-language-pairs',
-      false
-    >;
-    popularLanguagePairsTitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface TranslateSectionsLanguagesOffering
-  extends Struct.ComponentSchema {
-  collectionName: 'components_translate_sections_languages_offerings';
-  info: {
-    displayName: 'Languages Offering';
-  };
-  attributes: {
-    languages: Schema.Attribute.Relation<'oneToMany', 'api::language.language'>;
-  };
-}
-
-export interface TranslateSectionsPopularLanguagePairs
-  extends Struct.ComponentSchema {
-  collectionName: 'components_translate_sections_popular_language_pairs';
-  info: {
-    description: '';
-    displayName: 'Popular Language Pairs';
-  };
-  attributes: {
-    languagePairs: Schema.Attribute.Relation<
+    language_pairs: Schema.Attribute.Relation<
       'oneToMany',
       'api::language-pair.language-pair'
     >;
+    languages: Schema.Attribute.Relation<'oneToMany', 'api::language.language'>;
+    moreLanguagesTitle: Schema.Attribute.String;
+    popularLanguagePairsTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -459,8 +430,6 @@ declare module '@strapi/strapi' {
       'translate-sections.image-gallery': TranslateSectionsImageGallery;
       'translate-sections.image-text': TranslateSectionsImageText;
       'translate-sections.language-pairs-offering': TranslateSectionsLanguagePairsOffering;
-      'translate-sections.languages-offering': TranslateSectionsLanguagesOffering;
-      'translate-sections.popular-language-pairs': TranslateSectionsPopularLanguagePairs;
       'translate-sections.reference-text': TranslateSectionsReferenceText;
     }
   }
