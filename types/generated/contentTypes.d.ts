@@ -1607,12 +1607,6 @@ export interface ApiPTranslateDocumentPTranslateDocument
       'api::p-translate-document.p-translate-document'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    se: Schema.Attribute.Component<'shared.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     sections: Schema.Attribute.DynamicZone<
       [
         'translate-sections.language-pairs-offering',
@@ -1623,6 +1617,12 @@ export interface ApiPTranslateDocumentPTranslateDocument
         'cases.footer-note',
       ]
     > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

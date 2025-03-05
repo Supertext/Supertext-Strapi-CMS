@@ -25,7 +25,7 @@
       "type": "uid",
       "required": true
     },
-    "se": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
