@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "p_translates",
+  "info": {
+    "singularName": "p-translate",
+    "pluralName": "p-translates",
+    "displayName": "P-Translate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
+    },
+    "sections": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "translate-sections.reference-text",
+        "translate-sections.popular-language-pairs",
+        "translate-sections.languages-offering",
+        "translate-sections.language-pairs-offering",
+        "translate-sections.image-text",
+        "translate-sections.image-gallery",
+        "translate-sections.hero",
+        "translate-sections.features",
+        "translate-sections.feature-icons",
+        "translate-sections.checked-list-item",
+        "cases.footer-note"
+      ]
+    },
+    "heading": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "showAITranslator": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "language_pair": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language-pair.language-pair"
+    }
+  }
+}

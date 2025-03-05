@@ -26,11 +26,6 @@
       "relation": "oneToOne",
       "target": "api::language.language"
     },
-    "translatePage": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::translate.translate"
-    },
     "label": {
       "pluginOptions": {
         "i18n": {

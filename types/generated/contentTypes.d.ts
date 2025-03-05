@@ -1474,10 +1474,6 @@ export interface ApiLanguagePairLanguagePair
       'oneToOne',
       'api::language.language'
     >;
-    translatePage: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::translate.translate'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1558,6 +1554,178 @@ export interface ApiLaunchLaunch extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::launch.launch'>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPTranslateDocumentPTranslateDocument
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'p_translate_documents';
+  info: {
+    description: '';
+    displayName: 'P-Translate-Document';
+    pluralName: 'p-translate-documents';
+    singularName: 'p-translate-document';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    file_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::file-type.file-type'
+    >;
+    header: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    language_pair: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::language-pair.language-pair'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::p-translate-document.p-translate-document'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    se: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'translate-sections.reference-text',
+        'translate-sections.popular-language-pairs',
+        'translate-sections.languages-offering',
+        'translate-sections.language-pairs-offering',
+        'translate-sections.image-text',
+        'translate-sections.image-gallery',
+        'translate-sections.hero',
+        'translate-sections.features',
+        'translate-sections.feature-icons',
+        'translate-sections.checked-list-item',
+        'cases.footer-note',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    showAITranslator: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPTranslatePTranslate extends Struct.CollectionTypeSchema {
+  collectionName: 'p_translates';
+  info: {
+    description: '';
+    displayName: 'P-Translate';
+    pluralName: 'p-translates';
+    singularName: 'p-translate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    language_pair: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::language-pair.language-pair'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::p-translate.p-translate'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'translate-sections.reference-text',
+        'translate-sections.popular-language-pairs',
+        'translate-sections.languages-offering',
+        'translate-sections.language-pairs-offering',
+        'translate-sections.image-text',
+        'translate-sections.image-gallery',
+        'translate-sections.hero',
+        'translate-sections.features',
+        'translate-sections.feature-icons',
+        'translate-sections.checked-list-item',
+        'cases.footer-note',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    showAITranslator: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    slug: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1895,102 +2063,6 @@ export interface ApiTextshuttleIsNowSupertextTextshuttleIsNowSupertext
           localized: true;
         };
       }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiTranslateTranslate extends Struct.CollectionTypeSchema {
-  collectionName: 'translates';
-  info: {
-    description: '';
-    displayName: 'Translate';
-    pluralName: 'translates';
-    singularName: 'translate';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    file_type: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::file-type.file-type'
-    >;
-    language_pair: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::language-pair.language-pair'
-    >;
-    languagePairLeading: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::translate.translate'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.DynamicZone<
-      [
-        'translate-sections.hero',
-        'translate-sections.features',
-        'translate-sections.image-text',
-        'translate-sections.image-gallery',
-        'cases.footer-note',
-        'translate-sections.language-pairs-offering',
-      ]
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Schema.Attribute.Component<'shared.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    showAITranslator: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
-    slug: Schema.Attribute.UID &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    templateCategory: Schema.Attribute.Enumeration<
-      [
-        'languagePairTranslation',
-        'fileTypeTranslation',
-        'industrySpecificTranslation',
-      ]
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<'languagePairTranslation'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2612,6 +2684,8 @@ declare module '@strapi/strapi' {
       'api::language-pair.language-pair': ApiLanguagePairLanguagePair;
       'api::language.language': ApiLanguageLanguage;
       'api::launch.launch': ApiLaunchLaunch;
+      'api::p-translate-document.p-translate-document': ApiPTranslateDocumentPTranslateDocument;
+      'api::p-translate.p-translate': ApiPTranslatePTranslate;
       'api::plain-language.plain-language': ApiPlainLanguagePlainLanguage;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::reference.reference': ApiReferenceReference;
@@ -2619,7 +2693,6 @@ declare module '@strapi/strapi' {
       'api::technology.technology': ApiTechnologyTechnology;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'api::textshuttle-is-now-supertext.textshuttle-is-now-supertext': ApiTextshuttleIsNowSupertextTextshuttleIsNowSupertext;
-      'api::translate.translate': ApiTranslateTranslate;
       'api::why-supertext.why-supertext': ApiWhySupertextWhySupertext;
       'api::work-at-supertext.work-at-supertext': ApiWorkAtSupertextWorkAtSupertext;
       'plugin::content-releases.release': PluginContentReleasesRelease;
