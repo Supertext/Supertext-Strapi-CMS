@@ -1615,16 +1615,11 @@ export interface ApiPTranslateDocumentPTranslateDocument
       }>;
     sections: Schema.Attribute.DynamicZone<
       [
-        'translate-sections.reference-text',
-        'translate-sections.popular-language-pairs',
-        'translate-sections.languages-offering',
         'translate-sections.language-pairs-offering',
         'translate-sections.image-text',
         'translate-sections.image-gallery',
         'translate-sections.hero',
         'translate-sections.features',
-        'translate-sections.feature-icons',
-        'translate-sections.checked-list-item',
         'cases.footer-note',
       ]
     > &
@@ -1693,16 +1688,11 @@ export interface ApiPTranslatePTranslate extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.DynamicZone<
       [
-        'translate-sections.reference-text',
-        'translate-sections.popular-language-pairs',
-        'translate-sections.languages-offering',
         'translate-sections.language-pairs-offering',
         'translate-sections.image-text',
         'translate-sections.image-gallery',
         'translate-sections.hero',
         'translate-sections.features',
-        'translate-sections.feature-icons',
-        'translate-sections.checked-list-item',
         'cases.footer-note',
       ]
     > &
