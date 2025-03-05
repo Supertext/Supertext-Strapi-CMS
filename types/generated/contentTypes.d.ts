@@ -1590,13 +1590,6 @@ export interface ApiPTranslateDocumentPTranslateDocument
       'oneToOne',
       'api::file-type.file-type'
     >;
-    header: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     language_pair: Schema.Attribute.Relation<
       'oneToOne',
       'api::language-pair.language-pair'
@@ -1643,6 +1636,13 @@ export interface ApiPTranslateDocumentPTranslateDocument
           localized: true;
         };
       }>;
+    translatorTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1669,13 +1669,6 @@ export interface ApiPTranslatePTranslate extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heading: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     language_pair: Schema.Attribute.Relation<
       'oneToOne',
       'api::language-pair.language-pair'
@@ -1716,6 +1709,13 @@ export interface ApiPTranslatePTranslate extends Struct.CollectionTypeSchema {
       }> &
       Schema.Attribute.DefaultTo<true>;
     slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    translatorTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

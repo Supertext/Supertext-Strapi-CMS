@@ -51,7 +51,7 @@
         "cases.footer-note"
       ]
     },
-    "header": {
+    "translatorTitle": {
       "pluginOptions": {
         "i18n": {
           "localized": true
