@@ -404,7 +404,7 @@ export interface ApiAboutSupertextAboutSupertext
     managementMembers: Schema.Attribute.Component<'misc.management', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
