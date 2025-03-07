@@ -36,6 +36,17 @@
         }
       },
       "component": "base.blog-post-container"
+    },
+    "managementMembers": {
+      "displayName": "Management",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "misc.management"
     }
   }
 }

@@ -206,6 +206,20 @@ export interface ImpressumSection extends Struct.ComponentSchema {
   };
 }
 
+export interface MiscManagement extends Struct.ComponentSchema {
+  collectionName: 'components_misc_managements';
+  info: {
+    displayName: 'Management';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    linkedin: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+  };
+}
+
 export interface OrderformContent extends Struct.ComponentSchema {
   collectionName: 'components_orderform_contents';
   info: {
@@ -417,6 +431,7 @@ declare module '@strapi/strapi' {
       'cases.text-content': CasesTextContent;
       'impressum.item': ImpressumItem;
       'impressum.section': ImpressumSection;
+      'misc.management': MiscManagement;
       'orderform.content': OrderformContent;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

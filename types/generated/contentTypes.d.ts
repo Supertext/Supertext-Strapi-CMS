@@ -401,6 +401,12 @@ export interface ApiAboutSupertextAboutSupertext
       'oneToMany',
       'api::about-supertext.about-supertext'
     >;
+    managementMembers: Schema.Attribute.Component<'misc.management', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'base.seo', false> &
       Schema.Attribute.SetPluginOptions<{

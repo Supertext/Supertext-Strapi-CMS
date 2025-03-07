@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_misc_managements",
+  "info": {
+    "displayName": "Management"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "linkedin": {
+      "type": "string"
+    }
+  }
+}
