@@ -1,0 +1,53 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_proofreadings",
+  "info": {
+    "singularName": "service-proofreading",
+    "pluralName": "service-proofreadings",
+    "displayName": "Service - Proofreading",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo",
+      "required": true
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.faq-container",
+      "required": true
+    },
+    "references": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.reference-logo",
+      "required": true
+    }
+  }
+}

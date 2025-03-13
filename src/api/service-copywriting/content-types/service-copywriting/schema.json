@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_copywritings",
+  "info": {
+    "singularName": "service-copywriting",
+    "pluralName": "service-copywritings",
+    "displayName": "Service - Copywriting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.seo",
+      "required": true
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "base.faq-container",
+      "required": true
+    }
+  }
+}

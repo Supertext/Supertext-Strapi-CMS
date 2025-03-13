@@ -1882,6 +1882,152 @@ export interface ApiReferenceReference extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiServiceCopywritingServiceCopywriting
+  extends Struct.SingleTypeSchema {
+  collectionName: 'service_copywritings';
+  info: {
+    displayName: 'Service - Copywriting';
+    pluralName: 'service-copywritings';
+    singularName: 'service-copywriting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'base.faq-container', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-copywriting.service-copywriting'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceProofreadingServiceProofreading
+  extends Struct.SingleTypeSchema {
+  collectionName: 'service_proofreadings';
+  info: {
+    description: '';
+    displayName: 'Service - Proofreading';
+    pluralName: 'service-proofreadings';
+    singularName: 'service-proofreading';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'base.faq-container', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-proofreading.service-proofreading'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    references: Schema.Attribute.Component<'base.reference-logo', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceSpecialistTranslationServiceSpecialistTranslation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'service_specialist_translations';
+  info: {
+    description: '';
+    displayName: 'Service - Translation';
+    pluralName: 'service-specialist-translations';
+    singularName: 'service-specialist-translation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'base.faq-container', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-specialist-translation.service-specialist-translation'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'base.seo', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSubscriptionSubscription extends Struct.SingleTypeSchema {
   collectionName: 'subscriptions';
   info: {
@@ -2685,6 +2831,9 @@ declare module '@strapi/strapi' {
       'api::plain-language.plain-language': ApiPlainLanguagePlainLanguage;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::reference.reference': ApiReferenceReference;
+      'api::service-copywriting.service-copywriting': ApiServiceCopywritingServiceCopywriting;
+      'api::service-proofreading.service-proofreading': ApiServiceProofreadingServiceProofreading;
+      'api::service-specialist-translation.service-specialist-translation': ApiServiceSpecialistTranslationServiceSpecialistTranslation;
       'api::subscription.subscription': ApiSubscriptionSubscription;
       'api::technology.technology': ApiTechnologyTechnology;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
