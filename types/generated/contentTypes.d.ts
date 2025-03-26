@@ -603,7 +603,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     previewImageGrayscale: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.DefaultTo<false>;
